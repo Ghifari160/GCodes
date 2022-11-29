@@ -11,6 +11,7 @@ M82                                     ; extruder absolute mode
 M104 S150                               ; set temporary nozzle temp
 M140 S{first_layer_bed_temperature[0]}  ; set final bed temp
 M190 S{first_layer_bed_temperature[0]}  ; wait for final bed temp
+M109 S150                               ; wait for temporary nozzle temp
 G28                                     ; home all axes
 G29 A                                   ; enable UBL
 G29 L0                                  ; load mesh 0
@@ -28,5 +29,4 @@ G92 E0                                  ; reset extruder
 ; end of nozzle prime sequence
 G0 Z2 F3000                             ; move z axis up to prevent bed scratching
 G0 X5 Y20 Z0.2 F5000                    ; prevent blob squish
-M83                                     ; extruder relative mode
 ; End of Ender 3 v2 Start
